@@ -21,7 +21,7 @@ route = client.directions(coordinates=coordinates,
                           format='geojson')
 
 # map
-map_directions = folium.Map(location=[33.77, -84.37], zoom_start=5)
+map_directions = folium.Map(location=[50.93, 6.95], zoom_start=13)
 
 # add geojson to map
 folium.GeoJson(route, name='route').add_to(map_directions)
