@@ -11,9 +11,9 @@ ors_key = '5b3ce3597851110001cf62486d6ad0e922c94437ad054d71396dc725'
 # client will be used in all examples
 client = ors.Client(key=ors_key)
 
-# coordinates from Nashville, TN (-86.781247, 36.163532) to Miami, FL (-80.191850, 25.771645)
+# coordinates from Koeln-Muelheim (50.96343, 7.01161) to Koelner Dom (50.94123942911647, 6.958282727180334)
 # order for coordinates is [lon, lat]
-coordinates = [[-86.781247, 36.163532], [-80.191850, 25.771645]]
+coordinates = [[7.01161, 50.96343], [6.95829, 50.94127]]
 
 # directions
 route = client.directions(coordinates=coordinates,
@@ -43,7 +43,7 @@ for index, i in enumerate(route['features'][0]['properties']['segments'][0]['ste
     print(index + 1, i, '\n')
 
 # coordinates
-coordinates = [[-80.127995, 25.784097]]
+coordinates = [[7.01161, 50.96343]]
 
 # isochrone
 isochrone = client.isochrones(locations=coordinates,
@@ -53,7 +53,7 @@ isochrone = client.isochrones(locations=coordinates,
                               attributes=['total_pop'])
 
 # map
-map_isochrone = folium.Map(location=[25.784097, -80.127995], tiles='cartodbpositron', zoom_start=12)
+map_isochrone = folium.Map(location=[50.96343, 7.01161], tiles='cartodbpositron', zoom_start=12)
 
 # add geojson to map with population
 population = isochrone['features'][0]['properties']['total_pop']
@@ -62,7 +62,7 @@ folium.GeoJson(isochrone, name='isochrone', tooltip=f'population: {population:,.
 # add marker to map
 minutes = isochrone['features'][0]['properties']['value'] / 60
 popup_message = f'outline shows areas reachable within {minutes} minutes'
-folium.Marker([25.784097, -80.127995], popup=popup_message, tooltip='click').add_to(map_isochrone)
+folium.Marker([50.96343, 7.01161], popup=popup_message, tooltip='click').add_to(map_isochrone)
 
 # add layer control to map (allows layer to be turned on or off)
 folium.LayerControl().add_to(map_isochrone)
