@@ -11,17 +11,17 @@ ors_key = '5b3ce3597851110001cf62486d6ad0e922c94437ad054d71396dc725'
 # client will be used in all examples
 client = ors.Client(key=ors_key)
 
-# coordinates from Koeln-Muelheim (50.96343, 7.01161) to Koelner Dom (50.94123942911647, 6.958282727180334)
+# coordinates from University of Cologne Main Building to Institute of Geography
 # order for coordinates is [lon, lat]
-coordinates = [[7.01161, 50.96343], [6.95829, 50.94127]]
+coordinates = [[6.9285028911062385, 50.92814186057143], [6.9360472743998995, 50.92744533559387]]
 
 # directions
 route = client.directions(coordinates=coordinates,
-                          profile='driving-car',
+                          profile='foot-walking',
                           format='geojson')
 
 # map
-map_directions = folium.Map(location=[50.93, 6.95], zoom_start=13)
+map_directions = folium.Map(location=[50.92814186057143, 6.9285028911062385], zoom_start=17)
 
 # add geojson to map
 folium.GeoJson(route, name='route').add_to(map_directions)
@@ -62,7 +62,7 @@ folium.GeoJson(isochrone, name='isochrone', tooltip=f'population: {population:,.
 # add marker to map
 minutes = isochrone['features'][0]['properties']['value'] / 60
 popup_message = f'outline shows areas reachable within {minutes} minutes'
-folium.Marker([50.96343, 7.01161], popup=popup_message, tooltip='click').add_to(map_isochrone)
+folium.Marker([7.01161, 50.96343], popup=popup_message, tooltip='click').add_to(map_isochrone)
 
 # add layer control to map (allows layer to be turned on or off)
 folium.LayerControl().add_to(map_isochrone)
@@ -71,10 +71,10 @@ folium.LayerControl().add_to(map_isochrone)
 map_isochrone.save("isochrone_map.html")
 
 # map
-map_geocode = folium.Map(location=[31.7755, -106.4664], tiles='cartodbpositron', zoom_start=13)
+map_geocode = folium.Map(location=[50.94123942911647, 6.958282727180334], tiles='cartodbpositron', zoom_start=13)
 
 # address
-address = '4001 E Paisano Dr, El Paso, TX, 79905'
+address = 'Domkloster 4, 50667 Koeln'
 
 # geocode
 geocode = client.pelias_search(text=address, focus_point=list(reversed(map_geocode.location)))
@@ -89,8 +89,8 @@ for result in geocode['features']:
 map_geocode.save("geocode_map.html")
 
 # coordinates
-geojson = {"type": "point", "coordinates": [-106.435073, 31.774464]}
-coordinates = [31.774464, -106.435073]
+geojson = {"type": "point", "coordinates": [50.94123942911647, 6.958282727180334]}
+coordinates = [50.94123942911647, 6.958282727180334]
 
 # places of interest
 pois = client.places(request='pois',
