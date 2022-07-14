@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_3d024172f39d65f93985166623536d48 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_3d024172f39d65f93985166623536d48" ></div>
+        
+</body>
+<script>    
+    
+            var map_3d024172f39d65f93985166623536d48 = L.map(
+                "map_3d024172f39d65f93985166623536d48",
+                {
+                    center: [50.92814186057143, 6.9285028911062385],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 17,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c043b30455f053702ff27f846d0e8b73 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_3d024172f39d65f93985166623536d48);
+        
+    
+
+        function geo_json_0cfd81487970c0c24f8d69a84fcc8c5c_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_0cfd81487970c0c24f8d69a84fcc8c5c = L.geoJson(null, {
+                onEachFeature: geo_json_0cfd81487970c0c24f8d69a84fcc8c5c_onEachFeature,
+            
+        });
+
+        function geo_json_0cfd81487970c0c24f8d69a84fcc8c5c_add (data) {
+            geo_json_0cfd81487970c0c24f8d69a84fcc8c5c
+                .addData(data)
+                .addTo(map_3d024172f39d65f93985166623536d48);
+        }
+            geo_json_0cfd81487970c0c24f8d69a84fcc8c5c_add({"bbox": [6.928493, 50.927001, 6.936039, 50.928139], "features": [{"bbox": [6.928493, 50.927001, 6.936039, 50.928139], "geometry": {"coordinates": [[6.928493, 50.928139], [6.928531, 50.928086], [6.928638, 50.928109], [6.928751, 50.92793], [6.92902, 50.927511], [6.929062, 50.927442], [6.929151, 50.927464], [6.929326, 50.927508], [6.929578, 50.927494], [6.929711, 50.927271], [6.930021, 50.927348], [6.930099, 50.927342], [6.930241, 50.927359], [6.930293, 50.927336], [6.930355, 50.927242], [6.930452, 50.927195], [6.930575, 50.927001], [6.930625, 50.927012], [6.930694, 50.927027], [6.930752, 50.92704], [6.931681, 50.927275], [6.931698, 50.927246], [6.932041, 50.927165], [6.932445, 50.927108], [6.932761, 50.927077], [6.932831, 50.927032], [6.932849, 50.92702], [6.932958, 50.927066], [6.933195, 50.927158], [6.933458, 50.927255], [6.933634, 50.927317], [6.934302, 50.927533], [6.934465, 50.927584], [6.934662, 50.927652], [6.934811, 50.92772], [6.934831, 50.927707], [6.934869, 50.927679], [6.934902, 50.92763], [6.935537, 50.927994], [6.935628, 50.927958], [6.935984, 50.927787], [6.935906, 50.927729], [6.935943, 50.927698], [6.935995, 50.927655], [6.935974, 50.927547], [6.935997, 50.927475], [6.936039, 50.927441]], "type": "LineString"}, "properties": {"segments": [{"distance": 731.1, "duration": 526.4, "steps": [{"distance": 6.5, "duration": 4.7, "instruction": "Head southeast", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 87.9, "duration": 63.3, "instruction": "Turn left onto Universit\u00e4tsstra\u00dfe", "name": "Universit\u00e4tsstra\u00dfe", "type": 0, "way_points": [1, 5]}, {"distance": 64.1, "duration": 46.2, "instruction": "Turn left", "name": "-", "type": 0, "way_points": [5, 9]}, {"distance": 170.0, "duration": 122.4, "instruction": "Turn left", "name": "-", "type": 0, "way_points": [9, 20]}, {"distance": 80.6, "duration": 58.0, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [20, 24]}, {"distance": 8.9, "duration": 6.4, "instruction": "Turn slight right onto Alphons-Silbermann-Weg", "name": "Alphons-Silbermann-Weg", "type": 5, "way_points": [24, 26]}, {"distance": 158.2, "duration": 113.9, "instruction": "Turn left onto Z\u00fclpicher Stra\u00dfe", "name": "Z\u00fclpicher Stra\u00dfe", "type": 0, "way_points": [26, 34]}, {"distance": 12.1, "duration": 8.7, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [34, 37]}, {"distance": 60.2, "duration": 43.3, "instruction": "Turn sharp left", "name": "-", "type": 2, "way_points": [37, 38]}, {"distance": 47.3, "duration": 34.1, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [38, 41]}, {"distance": 35.4, "duration": 25.5, "instruction": "Turn left", "name": "-", "type": 0, "way_points": [41, 46]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, straight ahead", "name": "-", "type": 10, "way_points": [46, 46]}]}], "summary": {"distance": 731.1, "duration": 526.4}, "way_points": [0, 46]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org | OpenStreetMap contributors", "engine": {"build_date": "2022-02-18T19:37:41Z", "graph_date": "2022-07-05T09:28:08Z", "version": "6.7.0"}, "query": {"coordinates": [[6.9285028911062385, 50.92814186057143], [6.9360472743998995, 50.92744533559387]], "format": "geojson", "profile": "foot-walking"}, "service": "routing", "timestamp": 1657829903210}, "type": "FeatureCollection"});
+
+        
+    
+            var layer_control_b49ff33f1d6d60fc78143c0fd7440d6a = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_c043b30455f053702ff27f846d0e8b73,
+                },
+                overlays :  {
+                    "route" : geo_json_0cfd81487970c0c24f8d69a84fcc8c5c,
+                },
+            };
+            L.control.layers(
+                layer_control_b49ff33f1d6d60fc78143c0fd7440d6a.base_layers,
+                layer_control_b49ff33f1d6d60fc78143c0fd7440d6a.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_3d024172f39d65f93985166623536d48);
+        
+</script>

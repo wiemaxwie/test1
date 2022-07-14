@@ -1,0 +1,33 @@
+import folium
+import openrouteservice as ors
+
+# import PYTHON_API_KEYS
+
+
+# enter your openrouteservice api key here as string
+ors_key = '5b3ce3597851110001cf62486d6ad0e922c94437ad054d71396dc725'
+
+# performs requests to the ORS API services
+# client will be used in all examples
+client = ors.Client(key=ors_key)
+
+# coordinates from University of Cologne Main Building to Institute of Geography
+# order for coordinates is [lon, lat]
+coordinates = [[6.9285028911062385, 50.92814186057143], [6.9360472743998995, 50.92744533559387]]
+
+# directions
+route = client.directions(coordinates=coordinates,
+                          profile='foot-walking',
+                          format='geojson')
+
+# map
+map_directions = folium.Map(location=[50.92814186057143, 6.9285028911062385], zoom_start=17)
+
+# add geojson to map
+folium.GeoJson(route, name='route').add_to(map_directions)
+
+# add layer control to map (allows layer to be turned on or off)
+folium.LayerControl().add_to(map_directions)
+
+# display map
+map_directions.save("directions.html")
